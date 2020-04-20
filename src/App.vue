@@ -30,5 +30,15 @@ export default {
   data: () => ({
     //
   }),
+
+  created() {
+    document.title = this.$route.meta.title;
+  },
+
+  watch: {
+    $route(to) {
+      document.title = to.meta.title || "Your Website";
+    }
+  }
 };
 </script>
