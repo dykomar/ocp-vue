@@ -57,7 +57,7 @@
             <v-btn id="save" color="primary" @click="onSave">
               Save and Exit
             </v-btn>
-            <v-btn color="primary" @click="tab++">
+            <v-btn id="next" color="primary" @click="tab++">
               Next
             </v-btn>
           </v-card-actions>
