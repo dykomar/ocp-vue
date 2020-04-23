@@ -12,7 +12,7 @@
       <v-row class="text-center">
         <v-col class="mb-4">
           <div class="my-2">
-            <v-btn small color="primary" to="/about"
+            <v-btn id="register" small color="primary" to="/register"
               >Register a Business Name
             </v-btn>
           </div>
