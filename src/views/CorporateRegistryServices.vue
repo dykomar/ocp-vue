@@ -51,7 +51,7 @@
           <v-divider></v-divider>
 
           <v-card-actions>
-            <v-btn color="primary" to="/">
+            <v-btn id="cancel" color="primary" to="/">
               Cancel
             </v-btn>
             <v-btn id="save" color="primary" @click="onSave">
