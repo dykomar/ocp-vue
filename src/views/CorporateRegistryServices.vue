@@ -54,7 +54,7 @@
             <v-btn color="primary" to="/">
               Cancel
             </v-btn>
-            <v-btn color="primary" to="/">
+            <v-btn id="save" color="primary" @click="onSave">
               Save and Exit
             </v-btn>
             <v-btn color="primary" @click="tab++">
@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import { EventBus } from "@/main";
+
 import ImportantInformation from "@/components/corporate_registry_services/ImportantInformation";
 import GeneralDetails from "@/components/corporate_registry_services/GeneralDetails";
 import Addresses from "@/components/corporate_registry_services/Addresses";
@@ -86,6 +88,13 @@ export default {
     return {
       tab: null
     };
+  },
+
+  methods: {
+    onSave() {
+      EventBus.$emit("save");
+      this.$router.push("/");
+    }
   }
 };
 </script>
