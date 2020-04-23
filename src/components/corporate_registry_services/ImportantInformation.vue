@@ -23,6 +23,7 @@
           the Record Keeping (Business) Order, 2015.
         </p>
         <v-checkbox
+          id="checkbox"
           v-model="checkbox"
           label="I / We have read the above notice and duly take note of the requirements as stated above. "
         ></v-checkbox>
@@ -32,11 +33,21 @@
 </template>
 
 <script>
+import { EventBus } from "@/main";
+
 export default {
   name: "ImportantInformation",
 
   data: () => ({
     checkbox: false
-  })
+  }),
+
+  created() {
+    this.checkbox = this.$store.state.checkbox;
+
+    EventBus.$on("save", () => {
+      this.$store.commit("setCheckbox", this.checkbox);
+    });
+  }
 };
 </script>
